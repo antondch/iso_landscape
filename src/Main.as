@@ -8,11 +8,15 @@ import core.IsoScene;
 import flash.display.Sprite;
 import flash.display.StageAlign;
 import flash.display.StageScaleMode;
+import flash.events.IEventDispatcher;
 import flash.events.MouseEvent;
 
 public class Main extends Sprite
 {
     private var world:IsoScene;
+    private var mouseHoldY:Number;
+    private var resizedBox:IsoBox;
+
     public function Main()
     {
         stage.align = StageAlign.TOP_LEFT;
@@ -32,17 +36,31 @@ public class Main extends Sprite
                 world.add2Scene(tile);
             }
         }
-        stage.addEventListener(MouseEvent.CLICK, onWorldClick);
+        stage.addEventListener(MouseEvent.MOUSE_DOWN, registerResizeHandlers);
     }
 
-    private function onWorldClick(event:MouseEvent):void
+    private function registerResizeHandlers(event:MouseEvent):void
     {
         if(event.target is IsoBox)
         {
-            var box:IsoBox = event.target as IsoBox;
-            box.isoHeight +=5;
+            resizedBox = event.target as IsoBox;
+            mouseHoldY = stage.mouseY;
+            stage.addEventListener(MouseEvent.MOUSE_UP, uregisterResizeHandlers);
+            resizedBox.addEventListener(MouseEvent.MOUSE_MOVE, mouseMoveHandler);
+
         }
     }
 
+    private function uregisterResizeHandlers(event:MouseEvent):void
+    {
+            stage.removeEventListener(MouseEvent.MOUSE_UP, uregisterResizeHandlers);
+            resizedBox.removeEventListener(MouseEvent.MOUSE_MOVE, mouseMoveHandler);
+    }
+
+    private function mouseMoveHandler(event:MouseEvent):void
+    {
+        resizedBox.isoHeight+= mouseHoldY -stage.mouseY;
+        mouseHoldY = stage.mouseY;
+    }
 }
 }
