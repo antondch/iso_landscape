@@ -18,11 +18,12 @@ public class IsoScene extends Sprite
         _objects = new Array();
     }
 
-    public function add2Scene(child:IsoObject):void
+    public function add2Scene(child:IsoObject):IsoObject
     {
         _scene.addChild(child);
         _objects.push(child);
         sort();
+        return child;
     }
 
     public function sort():void
@@ -32,6 +33,11 @@ public class IsoScene extends Sprite
         {
             _scene.setChildIndex(_objects[i], i);
         }
+    }
+
+    public function get objects():Array
+    {
+        return _objects;
     }
 }
 }

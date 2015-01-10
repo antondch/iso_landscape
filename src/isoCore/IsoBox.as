@@ -90,6 +90,7 @@ public class IsoBox extends IsoTile
 //            graphics.endFill();
 //        }
 
-        }}
+        }
+    }
 }
 }

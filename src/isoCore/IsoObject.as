@@ -9,7 +9,7 @@ import flash.geom.Rectangle;
 
 public class IsoObject extends Sprite
 {
-
+    private var _place:Point = new Point();
     protected var _isoPosition:IsoPoint;
     protected var _size:Number;
 
@@ -75,6 +75,7 @@ public class IsoObject extends Sprite
     {
         return (_isoPosition.x + _isoPosition.z) * .866 - _isoPosition.y * .707;
     }
+
     public function get size():Number
     {
         return _size;
@@ -83,6 +84,16 @@ public class IsoObject extends Sprite
     public function get bounds():Rectangle
     {
         return new Rectangle(isoX - size / 2, isoZ - size / 2, size, size);
+    }
+
+    public function get place():Point
+    {
+        return _place;
+    }
+
+    public function set place(value:Point):void
+    {
+        _place = value;
     }
 }
 }
