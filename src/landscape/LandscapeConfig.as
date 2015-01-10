@@ -12,5 +12,6 @@ public class LandscapeConfig
     public const MIN_HEiGHT:int = 0;
     public const TILES_COLOR:uint = 0xCCCCCC;
     public const BOX_SIZE:int = 20;
+    public const LANDSCAPES_COUNT:int = 3;
 }
 }

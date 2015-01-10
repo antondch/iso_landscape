@@ -1,7 +1,7 @@
 /**
  * Created by Crazy Horse on 10.01.2015.
  */
-package ui
+package ui.components
 {
 import flash.display.DisplayObjectContainer;
 import flash.display.Shape;

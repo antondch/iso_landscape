@@ -6,8 +6,6 @@ package landscape
 import flash.events.Event;
 import flash.events.EventDispatcher;
 
-import isoCore.IsoBox;
-
 public class LandscapeModel extends EventDispatcher
 {
     private var landscapes:Vector.<Vector.<int>>;
@@ -79,12 +77,8 @@ public class LandscapeModel extends EventDispatcher
     public function setHeight(boxPosition:int, height:int):void
     {
         _currentLandscape[boxPosition] = height;
-        changeCurrentLandscape(0);//test
+//        changeCurrentLandscape(0);//test
     }
 
-//    public function get currentLandscape():Vector.<int>
-//    {
-//        return _currentLandscape;
-//    }
 }
 }

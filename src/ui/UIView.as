@@ -6,6 +6,8 @@ package ui
 import flash.display.Sprite;
 import flash.text.TextField;
 
+import ui.components.TextButton;
+
 public class UIView extends Sprite
 {
     private var landScape0Btn:TextButton;
@@ -33,6 +35,8 @@ public class UIView extends Sprite
         tf.text = "100";
         tf.x = 50;
         tf.y = 30;
+        tf.selectable = false;
+        tf.mouseEnabled = false;
         addChild(tf);
         graphics.moveTo(50, 100);
         graphics.lineTo(80, 100);
@@ -40,6 +44,8 @@ public class UIView extends Sprite
         tf.text = "50";
         tf.x = 50;
         tf.y = 80;
+        tf.selectable = false;
+        tf.mouseEnabled = false;
         addChild(tf);
         graphics.moveTo(50, 150);
         graphics.lineTo(80, 150);
@@ -47,6 +53,8 @@ public class UIView extends Sprite
         tf.text = "0";
         tf.x = 50;
         tf.y = 120;
+        tf.selectable = false;
+        tf.mouseEnabled = false;
         addChild(tf);
         graphics.moveTo(50, 200);
         graphics.lineTo(80, 200);
@@ -54,6 +62,8 @@ public class UIView extends Sprite
         tf.text = "-50";
         tf.x = 50;
         tf.y = 170;
+        tf.selectable = false;
+        tf.mouseEnabled = false;
         addChild(tf);
         graphics.moveTo(50, 250);
         graphics.lineTo(80, 250);
@@ -61,8 +71,11 @@ public class UIView extends Sprite
         tf.text = "100";
         tf.x = 50;
         tf.y = 220;
+        tf.selectable = false;
+        tf.mouseEnabled = false;
         addChild(tf);
 
+        //todo: move all text 2 lanConfig.
         landScape0Btn = new TextButton("Набор высот №1");
         landScape0Btn.x = 30;
         landScape0Btn.y = 450;
