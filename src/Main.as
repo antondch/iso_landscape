@@ -10,6 +10,8 @@ import flash.display.StageAlign;
 import flash.display.StageScaleMode;
 import flash.events.MouseEvent;
 
+import ui.TextButton;
+
 public class Main extends Sprite
 {
     private var world:IsoScene;
