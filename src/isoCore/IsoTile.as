@@ -7,6 +7,7 @@ public class IsoTile extends IsoObject
 {
     protected var _height:Number;
     protected var _color:uint;
+
     public function IsoTile(size:Number, color:uint, height:Number = 0)
     {
         super(size);
