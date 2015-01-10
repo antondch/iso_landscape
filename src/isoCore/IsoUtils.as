@@ -7,7 +7,7 @@ import flash.geom.Point;
 
 public class IsoUtils
 {
-    public static const Y_CALCULATED:Number = Math.cos(-Math.PI / 6) * Math.SQRT2;
+    public static const Y_CALCULATED:Number = 1; //Math.cos(-Math.PI / 6) * Math.SQRT2;
 
     public static function isoToScreen(isoPoint:IsoPoint):Point
     {

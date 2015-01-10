@@ -10,8 +10,9 @@ import flash.display.StageAlign;
 import flash.display.StageScaleMode;
 import flash.events.MouseEvent;
 
-import ui.TextButton;
+import ui.DisplayMenu;
 
+[SWF(width=1000,height=1000)]
 public class Main extends Sprite
 {
     private var world:IsoScene;
@@ -20,16 +21,25 @@ public class Main extends Sprite
     public static const MAX_HEiGHT:int = 300;
     public static const DEFAULT_HEIGHT:int = 150;
     public static const MIN_HEiGHT:int = 0;
+    private var ui:DisplayMenu;
+    private var mainContainer:Sprite;
 
     public function Main()
     {
+        mainContainer = new Sprite();
+        mainContainer.y = 150;
+        addChild(mainContainer);
+
         stage.align = StageAlign.TOP_LEFT;
         stage.scaleMode = StageScaleMode.NO_SCALE;
 
+        ui = new DisplayMenu();
+        mainContainer.addChild(ui);
+
         world = new IsoScene();
-        world.x = stage.stageWidth / 2;
-        world.y = 300;
-        addChild(world);
+        world.x = 280;
+        world.y = 210;
+        mainContainer.addChild(world);
 
         for (var i:int = 0; i < 10; i++)
         {
