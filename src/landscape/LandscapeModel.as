@@ -6,8 +6,6 @@ package landscape
 import flash.events.Event;
 import flash.events.EventDispatcher;
 
-import isoCore.IsoBox;
-
 public class LandscapeModel extends EventDispatcher
 {
     private var landscapes:Vector.<Vector.<int>>;
@@ -52,6 +50,7 @@ public class LandscapeModel extends EventDispatcher
 
     public function changeCurrentLandscape(id:int):void
     {
+        trace(this,id);
         if (id > landscapes.length)
         {
             throw new ArgumentError(this + ": illegal landscape id");
@@ -71,6 +70,14 @@ public class LandscapeModel extends EventDispatcher
         dispatchEvent(_landScapeChangedEvent);
     }
 
+    public function initCurrentLandscapeWithHeights(heights:Vector.<int>)
+    {
+        var index:int = landscapes.indexOf(currentLandscape);
+        landscapes[index] = heights;
+        changeCurrentLandscape(index);
+
+    }
+
     public function getHeight(boxPosition:int):int
     {
         return _currentLandscape[boxPosition];
@@ -79,12 +86,12 @@ public class LandscapeModel extends EventDispatcher
     public function setHeight(boxPosition:int, height:int):void
     {
         _currentLandscape[boxPosition] = height;
-        changeCurrentLandscape(0);//test
     }
 
-//    public function get currentLandscape():Vector.<int>
-//    {
-//        return _currentLandscape;
-//    }
+
+    public function get currentLandscape():Vector.<int>
+    {
+        return _currentLandscape;
+    }
 }
 }

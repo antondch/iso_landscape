@@ -6,16 +6,19 @@ package ui
 import flash.display.Sprite;
 import flash.text.TextField;
 
+import ui.components.TextButton;
+
 public class UIView extends Sprite
 {
-    private var landScape0Btn:TextButton;
-    private var landScape1Btn:TextButton;
-    private var landScape2Btn:TextButton;
+    internal var landScape0Btn:TextButton;
+    internal var landScape1Btn:TextButton;
+    internal var landScape2Btn:TextButton;
 
-    private var importBtn:TextButton;
-    private var exportBtn:TextButton;
+    internal var importBtn:TextButton;
+    internal var exportBtn:TextButton;
 
-    private var currentHeightTF:TextField;
+    //todo: show current isoHeight on resize box (mabe, in infoView).
+//    private var currentHeightTF:TextField;
 
     public function UIView()
     {
@@ -33,6 +36,8 @@ public class UIView extends Sprite
         tf.text = "100";
         tf.x = 50;
         tf.y = 30;
+        tf.selectable = false;
+        tf.mouseEnabled = false;
         addChild(tf);
         graphics.moveTo(50, 100);
         graphics.lineTo(80, 100);
@@ -40,6 +45,8 @@ public class UIView extends Sprite
         tf.text = "50";
         tf.x = 50;
         tf.y = 80;
+        tf.selectable = false;
+        tf.mouseEnabled = false;
         addChild(tf);
         graphics.moveTo(50, 150);
         graphics.lineTo(80, 150);
@@ -47,6 +54,8 @@ public class UIView extends Sprite
         tf.text = "0";
         tf.x = 50;
         tf.y = 120;
+        tf.selectable = false;
+        tf.mouseEnabled = false;
         addChild(tf);
         graphics.moveTo(50, 200);
         graphics.lineTo(80, 200);
@@ -54,6 +63,8 @@ public class UIView extends Sprite
         tf.text = "-50";
         tf.x = 50;
         tf.y = 170;
+        tf.selectable = false;
+        tf.mouseEnabled = false;
         addChild(tf);
         graphics.moveTo(50, 250);
         graphics.lineTo(80, 250);
@@ -61,8 +72,11 @@ public class UIView extends Sprite
         tf.text = "100";
         tf.x = 50;
         tf.y = 220;
+        tf.selectable = false;
+        tf.mouseEnabled = false;
         addChild(tf);
 
+        //todo: move all text 2 lanConfig.
         landScape0Btn = new TextButton("Набор высот №1");
         landScape0Btn.x = 30;
         landScape0Btn.y = 450;
@@ -77,6 +91,18 @@ public class UIView extends Sprite
         landScape2Btn.x = 250;
         landScape2Btn.y = 450;
         addChild(landScape2Btn);
+
+        exportBtn = new TextButton("Экспорт");
+        exportBtn.x = 420;
+        exportBtn.y = 450;
+        addChild(exportBtn);
+
+        importBtn = new TextButton("Импорт");
+        importBtn.x = 420;
+        importBtn.y = 500;
+        addChild(importBtn);
+
+
     }
 }
 }
