@@ -91,6 +91,18 @@ public class UIView extends Sprite
         landScape2Btn.x = 250;
         landScape2Btn.y = 450;
         addChild(landScape2Btn);
+
+        exportBtn = new TextButton("Экспорт");
+        exportBtn.x = 420;
+        exportBtn.y = 450;
+        addChild(exportBtn);
+
+        importBtn = new TextButton("Импорт");
+        importBtn.x = 420;
+        importBtn.y = 500;
+        addChild(importBtn);
+
+
     }
 }
 }

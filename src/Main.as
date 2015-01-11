@@ -11,6 +11,12 @@ import landscape.LandscapeController;
 import landscape.LandscapeModel;
 import landscape.LandscapeView;
 
+import services.storage.FileStorageService;
+
+import services.storage.IStorageService;
+
+import services.storage.LandscapeEncoder;
+
 import ui.UIController;
 
 import ui.UIView;
@@ -45,7 +51,10 @@ public class Main extends Sprite
         var landscapeController:LandscapeController = new LandscapeController(landscapeView,landscapeModel,config);
 
         ui = new UIView();
-        var uiController:UIController = new UIController(ui, landscapeModel);
+        var encoder:LandscapeEncoder = new LandscapeEncoder(config.COLUMNS_COUNT*config.ROWS_COUNT);
+        var fileService:IStorageService = new FileStorageService();
+
+        var uiController:UIController = new UIController(ui, landscapeModel, encoder, fileService);
 
         mainContainer.addChild(ui);
         mainContainer.addChild(landscapeView);
