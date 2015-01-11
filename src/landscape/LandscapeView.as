@@ -20,13 +20,7 @@ public class LandscapeView extends IsoScene
     public function getBox(position:int):IsoBox
     {
         var result:IsoBox;
-        if(position<boxStorage.length)
-        {
-            result = boxStorage[position];
-        }else
-        {
-            result = null;
-        }
+        result = boxStorage[position];
         return result;
     }
 

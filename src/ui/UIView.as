@@ -10,14 +10,15 @@ import ui.components.TextButton;
 
 public class UIView extends Sprite
 {
-    private var landScape0Btn:TextButton;
-    private var landScape1Btn:TextButton;
-    private var landScape2Btn:TextButton;
+    internal var landScape0Btn:TextButton;
+    internal var landScape1Btn:TextButton;
+    internal var landScape2Btn:TextButton;
 
-    private var importBtn:TextButton;
-    private var exportBtn:TextButton;
+    internal var importBtn:TextButton;
+    internal var exportBtn:TextButton;
 
-    private var currentHeightTF:TextField;
+    //todo: show current isoHeight on resize box (mabe, in infoView).
+//    private var currentHeightTF:TextField;
 
     public function UIView()
     {

@@ -32,7 +32,7 @@ public class LandscapeController
         {
             for (var j:int = 0; j < config.COLUMNS_COUNT; j++)
             {
-                view.getBox(i + j).isoHeight = model.getHeight(i + j);
+                view.getBox(i*config.COLUMNS_COUNT + j).isoHeight = model.getHeight(i*config.COLUMNS_COUNT + j);
             }
         }
     }
@@ -47,7 +47,7 @@ public class LandscapeController
                 tile.place.x = j;
                 tile.place.y = i;
                 tile.isoPosition = new IsoPoint(i * config.BOX_SIZE, 0, j * config.BOX_SIZE);
-                tile.isoHeight = model.getHeight(i + j);
+                tile.isoHeight = model.getHeight(i*config.COLUMNS_COUNT + j);
                 view.add2Scene(tile);
             }
         }
@@ -85,6 +85,7 @@ public class LandscapeController
         } else
         {
             currentBox.isoHeight += mouseHoldY - view.stage.mouseY;
+
         }
         mouseHoldY = view.stage.mouseY;
     }

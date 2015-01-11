@@ -50,6 +50,7 @@ public class LandscapeModel extends EventDispatcher
 
     public function changeCurrentLandscape(id:int):void
     {
+        trace(this,id);
         if (id > landscapes.length)
         {
             throw new ArgumentError(this + ": illegal landscape id");

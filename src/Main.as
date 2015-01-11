@@ -50,8 +50,6 @@ public class Main extends Sprite
         mainContainer.addChild(ui);
         mainContainer.addChild(landscapeView);
 
-
-
         //todo: remove this trash
         landscapeView.x = 280;
         landscapeView.y = 210;
